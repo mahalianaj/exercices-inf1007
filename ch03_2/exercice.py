@@ -17,6 +17,11 @@ def point_in_circle(point, circle_center, circle_radius):
 	# TODO: Retourner vrai si le point est à l'intérieur du cercle, faux sinon.
 	# point[0] et circle_center[0] pour accéder au X
 	# point[1] et circle_center[1] pour accéder au Y
+	dx = point[0]-circle_center[0]
+	dy = point[1]-circle_center[1]
+	dt = math.sqrt(dx**2+dy**2)
+	r = math.sqrt((point[0]+point[1])**2+(circle_center[0]+circle_center[1]**2))
+	return dt >= r
 	pass
 
 def cash(value):

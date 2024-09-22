@@ -5,9 +5,24 @@ import math
 
 
 def get_num_letters(text):
-	return 0
+	sum=0
+	for elem in text:
+		if elem.isalnum():
+			sum+=1
+	return sum
 
 def get_word_length_histogram(text):
+	mots = text.split()
+	hist = []
+	
+	max_let = max(mots)
+	for word in range(mots, max_let):
+		count = 0 
+		for letter in word:
+			count += 1
+			hist.append(count)
+
+
 	return [0]
 
 def format_histogram(histogram):
