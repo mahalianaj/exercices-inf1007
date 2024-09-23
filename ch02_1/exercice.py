@@ -3,6 +3,11 @@
 
 def majuscule(mot):
     # TODO completer la fonction ici
+    diff = abs(ord("A")-ord("a"))
+    nouv_mot = ""
+    for letter in mot:
+        nouv_mot += chr(ord(letter) - diff)
+    
     return mot
 
 
