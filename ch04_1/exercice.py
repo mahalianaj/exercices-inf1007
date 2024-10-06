@@ -9,33 +9,33 @@ def is_even_len(string: str) -> bool:
 
 def remove_third_char(string: str) -> str:
     return string[:2]+string[3:]
-    
 
 
 def replace_char(string: str, old_char: str, new_char: str) -> str:
-    new_string = ""
-    for carac in string:
-        if old_char==carac:
-            string += 1 
+    new_string=''
+    for i in range(len(string)):
+        if string[i] == old_char:
+            string = string[:i]+new_char+string[i+1:]
+    return string
 
 
 
 def get_number_of_char(string: str, char: str) -> int:
-    iter = ""
-    for carac in string:
-        if carac == char:
-            iter += 1
-    return iter
+    occurence = 0
+    for i in range(len(string)):
+        if string[i] == char:
+            occurence += 1
+    return occurence
 
 
 
 def get_number_of_words(sentence: str, word: str) -> int:
-    liste_de_mots = sentence.split()
-    iter = ""
-    for mot in liste_de_mots:
-        if mot==word:
-            iter += 1
-    return iter
+    occurence = 0
+    word_list = sentence.split(" ")
+    for i in range(len(word_list)):
+        if word_list[i] == word:
+            occurence+=1
+    return occurence
 
 
 def main() -> None:
